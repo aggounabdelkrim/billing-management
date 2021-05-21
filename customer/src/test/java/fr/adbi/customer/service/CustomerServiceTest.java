@@ -9,32 +9,27 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
-
 
 @ExtendWith(MockitoExtension.class)
 class CustomerServiceTest {
 
-
     @Mock
     CustomerRepository customerRepository;
-
 
     @InjectMocks
     CustomerService customerService;
 
-
     @Test
-    public void creer_client_par_son_id(){
+    public void createrCustomerById() {
 
         //GIVEN
-        Customer client_to_create = Customer.builder()
+        Customer customerToCreate = Customer.builder()
                 .nameCustomer("ADBI")
                 .code("ADBI")
                 .adress("paris")
                 .build();
 
-        Customer expectedClient =  Customer.builder()
+        Customer expectedCustomer = Customer.builder()
                 .id(1)
                 .nameCustomer("ADBI")
                 .code("ADBI")
@@ -42,17 +37,14 @@ class CustomerServiceTest {
                 .build();
 
         //WHEN
+        Mockito.when(customerRepository.save(Mockito.any())).thenReturn(expectedCustomer);
+        Customer resultCustomer = customerService.create(customerToCreate);
 
-
-        Mockito.when(customerRepository.save(Mockito.any())).thenReturn(expectedClient);
-        Customer result_client = customerService.create(client_to_create);
-
-        System.out.println(client_to_create);
-        System.out.println(result_client);
+        System.out.println(customerToCreate);
+        System.out.println(resultCustomer);
 
         //THEN
-        Assert.assertEquals(result_client, expectedClient);
-
+        Assert.assertEquals(resultCustomer, expectedCustomer);
     }
 
 }

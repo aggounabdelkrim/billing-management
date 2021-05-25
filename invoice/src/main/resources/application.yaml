@@ -1,24 +1,9 @@
 server:
-  port:9090
+  port:9093
 
 spring:
   application:
-    name: Billing management medel
-  datasource:
-    url: "jdbc:postgresql://localhost:5432/bd_invoice"
-    username: postgres
-    password: postgres
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    properties:
-      hibernate:
-        auto_quote_keyword: true
-        ddl-auto: create
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-        hbm2ddl:
-          auto: update
-        id:
-          new_generator_mappings: false
+    name: Billing management invoice
   main:
     allow-bean-definition-overriding: true
   servlet:

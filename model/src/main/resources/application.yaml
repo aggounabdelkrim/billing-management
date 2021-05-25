@@ -1,14 +1,13 @@
-server:
-  port:9090
-
 spring:
   application:
-    name: Billing management medel
+    name: Billing management model
+    
   datasource:
     url: "jdbc:postgresql://localhost:5432/bd_invoice"
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
+    
   jpa:
     properties:
       hibernate:
@@ -19,8 +18,10 @@ spring:
           auto: update
         id:
           new_generator_mappings: false
+          
   main:
     allow-bean-definition-overriding: true
+    
   servlet:
     multipart:
       max-file-size: 100MB

@@ -1,13 +1,13 @@
-package fr.adbi.management.model;
+package fr.adbi.management.customer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ModelApplication {
+public class CustomerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ModelApplication.class, args);
+        SpringApplication.run(CustomerApplication.class, args);
     }
 
 }

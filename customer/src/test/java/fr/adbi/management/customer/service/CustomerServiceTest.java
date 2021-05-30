@@ -21,7 +21,6 @@ class CustomerServiceTest {
 
     @Test
     public void createrCustomerById() {
-
         //GIVEN
         Customer customerToCreate = Customer.builder()
                 .nameCustomer("ADBI")
@@ -40,8 +39,8 @@ class CustomerServiceTest {
         Mockito.when(customerRepository.save(Mockito.any())).thenReturn(expectedCustomer);
         Customer resultCustomer = customerService.create(customerToCreate);
 
-        System.out.println(customerToCreate);
-        System.out.println(resultCustomer);
+        System.out.println(customerToCreate.toString());
+        System.out.println(resultCustomer.toString());
 
         //THEN
         Assert.assertEquals(resultCustomer, expectedCustomer);

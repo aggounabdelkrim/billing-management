@@ -47,5 +47,5 @@ public class Customer implements Serializable{
     private String adress;
 
     @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
-    private List<Invoice> invoiceList;
+    private List<Invoice> invoiceList;   
 }
